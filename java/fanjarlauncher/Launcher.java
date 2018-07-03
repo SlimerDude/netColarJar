@@ -138,11 +138,6 @@ public class Launcher
     try
     {
       jf = new JarFile(jar);
-      if (jf == null)
-      {
-        System.out.println("Could not read content of jar: " + jar);
-        System.exit(-1);
-      }
       // Extract Fantom runtime to user dir
       main = setupFantomEnv(jf);
     } catch (Exception e)
@@ -201,11 +196,6 @@ public class Launcher
     {
       this.is = is;
       this.out=out;
-    }
-
-    public void shutdown()
-    {
-      shutdownStreams=true;
     }
 
     @Override
